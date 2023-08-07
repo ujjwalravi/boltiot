@@ -1,6 +1,6 @@
 {
   "name": "boltiot",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Simple wrapper for Bolt IoT API - https://cloud.boltiot.com/api",
   "contributors": [
     "Ravi Ujjwal <ravi.ujjwal2000@gmail.com>"
@@ -20,9 +20,9 @@
   ],
   "repository": "https://github.com/ujjwalravi/boltiot.git",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "node-fetch": "3.3.2"
   },
   "devDependencies": {
-    "eslint": "^8.46.0"
+    "eslint": "8.46.0"
   }
 }

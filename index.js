@@ -100,7 +100,7 @@ class BoltIoT {
 				return {value: `${BASE_URL}${apiKey}/${operation}?deviceName=${deviceName}&${queryParams}`, success: 1}
 			}
 			if (type == 'analog') {
-				if (pin == 'A0' && value <= 255 && value >= 0) {
+				if (this.isValidValue(pin, [0, 1, 2, 3, 4]) && value <= 255 && value >= 0) {
 					queryParams =  `pin=${pin}&value=${value}`
 					return {value: `${BASE_URL}${apiKey}/${operation}?deviceName=${deviceName}&${queryParams}`, success: 1}
 				} else {
@@ -167,7 +167,7 @@ class BoltIoT {
 	}
 
 	async analogWrite(pin, value) {
-		const url = BoltIoT.constructWriteOperationUrlString(pin.toUpperCase(), parseInt(value), this.apiKey, this.deviceName, 'analog', 'analogWrite')
+		const url = BoltIoT.constructWriteOperationUrlString(pin, parseInt(value), this.apiKey, this.deviceName, 'analog', 'analogWrite')
 		if (!url.success) return url
 		const result = await BoltIoT.getData(url.value)
 		return result
