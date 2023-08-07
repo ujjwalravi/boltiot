@@ -25,8 +25,10 @@ $ npm i boltiot
 * __Obtain Your API Key:__
 To access the Bolt IoT services, you need an API key from the Bolt Cloud platform. If you don't have one, sign up on the Bolt Cloud platform to obtain your API key.
 * __Instantiate the BoltIoT Class:__
-To begin using the package, you first need to import the **BoltIoT** class and instantiate it with your API key and device name. Use any of the below two ways.
+To begin using the package, you first need to import the **BoltIoT** class and instantiate it with your API key and device name.
 
+### Import
+Use any of the below two ways to import the package.
 ```js
 var BoltIoT = require('boltiot')
 import BoltIoT from 'boltiot'
@@ -46,87 +48,87 @@ Once you have instantiated the BoltIoT class, you can use the following methods 
 (Note: The package documentation assumes basic familiarity with the Bolt Cloud API. For detailed information on the Bolt Cloud API, refer to the official Bolt Cloud API Documentation.)
 
 1. **digitalRead(pin)**
-pin (integer) - Digital pin number of the Bolt Device - (0,1,2,3,4)
+* pin (integer) - Digital pin number of the Bolt Device - (0,1,2,3,4)
 ```js
 const res = await bolt.digitalRead(1)
 ```
 2. **digitalMultiRead(pins)**
-pins (array<integer>) - Digital pin number of the Bolt Device - (0,1,2,3,4)
+* pins (array<integer>) - Digital pin number of the Bolt Device - (0,1,2,3,4)
 ```js
 const res = await bolt.digitalMultiRead([0,1,3])
 ```
 3. **digitalWrite(pin, value)**
-pin (integer) - Digital pin number of the Bolt Device - (0,1,2,3,4)
-value (string) - Digital pin values - ('HIGH', 'LOW')
+* pin (integer) - Digital pin number of the Bolt Device - (0,1,2,3,4)
+* value (string) - Digital pin values - ('HIGH', 'LOW')
 ```js
 const res = await bolt.digitalWrite(0, 'HIGH')
 ```
 4. **digitalMultiWrite(pins, values)**
-pins (array<integer>) - Digital pin number of the Bolt Device - (0,1,2,3,4)
-value (array<string>) - Digital pin values - ('HIGH', 'LOW')
+* pins (array<integer>) - Digital pin number of the Bolt Device - (0,1,2,3,4)
+* value (array<string>) - Digital pin values - ('HIGH', 'LOW')
 ```js
 const res = await bolt.digitalMultiWrite([0,1,3], ['HIGH', 'LOW', 'HIGH'])
 ```
 5. **analogRead(pin)**
-pin (string) - Analog pin number of the Bolt Device - ('A0')
+* pin (string) - Analog pin number of the Bolt Device - ('A0')
 ```js
 const res = await bolt.analogRead('A0')
 ```
 6. **analogWrite(pin, value)**
-pin (string) - Analog pin number of the Bolt Device - ('A0')
-value (integer) - Analog pin value between 0 and 255 - (0 <= value <= 255)
+* pin (integer) - Pin number of the Bolt Device - (0,1,2,3,4)
+* value (integer) - Analog pin value between 0 and 255 - (0 <= value <= 255)
 ```js
 const res = await bolt.analogWrite('A0', 128)
 ```
 7. **serialBegin()**
-No parameters required 
+* No parameters required 
 ```js
 const res = await bolt.serialBegin()
 ```
 8. **serialRead(value)**
-value (integer) - Value between 0 and 127 - (0 <= value <= 127)
+* value (integer) - Value between 0 and 127 - (0 <= value <= 127)
 ```js
 const res = await bolt.serialRead(64)
 ```
 9. **serialWrite(value)**
-data (string): The data to be sent to the Bolt device via Serial.
+* data (string): The data to be sent to the Bolt device via Serial.
 ```js
 const res = await bolt.serialWrite('Hello, Bolt!')
 ```
 10. **serialWriteRead(till, data)**
-till (integer) - Value between 0 and 127 - (0 <= value <= 127)
-data (string): The data to be sent to the Bolt device via Serial.
+* till (integer) - Value between 0 and 127 - (0 <= value <= 127)
+* data (string): The data to be sent to the Bolt device via Serial.
 ```js
 const res = await bolt.serialWriteRead(124, 'Hello Bolt!')
 ```
 11. **servoWrite(pin, value)**
-pin (integer) - Digital pin number of the Bolt Device - (0,1,2,3,4)
-value (integer) - Value between 0 and 127 - (0 <= value <= 180)
+* pin (integer) - Digital pin number of the Bolt Device - (0,1,2,3,4)
+* value (integer) - Value between 0 and 127 - (0 <= value <= 180)
 ```js
 const res = await bolt.servoWrite(1, 45)
 ```
 12. **getHistoricalData()**
-No parameters required 
+* No parameters required 
 ```js
 const res = await bolt.getHistoricalData()
 ```
 13. **getVersion()**
-No parameters required 
+* No parameters required 
 ```js
 const res = await bolt.getVersion()
 ```
 14. **getDeviceStatus()**
-No parameters required 
+* No parameters required 
 ```js
 const res = await bolt.getDeviceStatus()
 ```
 15. **restartDevice()**
-No parameters required 
+* No parameters required 
 ```js
 const res = await bolt.restartDevice()
 ```
 16. **getDeviceList()**
-No parameters required 
+* No parameters required 
 ```js
 const res = await bolt.restartDevice()
 ```
